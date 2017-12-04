@@ -319,9 +319,9 @@ AutoDj.SoundManager_Play = function(fnc_file, id) {
             }
         });
 
-        if (fnc_file.includes("oayt-delivery.snowdns.de")) {
+        if (fnc_file.includes("oa-yt.snowdns.de")) {
             curl = fnc_file.toString().split('&v=')[1];
-            $.get("https://oayt-delivery.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + curl, function (data) {
+            $.get("https://oa-yt.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + curl, function (data) {
                 let json = JSON.parse(data);
                 OpenAudioAPI.songNotification({
                     songTitle: json["title"],
