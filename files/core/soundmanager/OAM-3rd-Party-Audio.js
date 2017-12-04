@@ -39,7 +39,7 @@ function getYoutbe(youtubeId) {
     if (youtubeId.includes('youtube.com')) {
         console.warn('[OpenAudio] [snowDNSException] Please use ID only. Correcting for you.');
         var getid = youtubeId.split("?v=");
-        $.get("https://oayt-delivery.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + getid[1], function(data) {
+        $.get("https://oa-yt.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + getid[1], function(data) {
             let json = JSON.parse(data);
             OpenAudioAPI.songNotification({
                 songTitle: json["title"],
@@ -47,11 +47,11 @@ function getYoutbe(youtubeId) {
                 songImage: json["thumbnail"]
             });
         });
-        return "https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + getid[1];
+        return "https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + getid[1];
     } else if (youtubeId.includes('yout.ub/')) {
         console.warn('[OpenAudio] [snowDNSException] Please use ID only. Correcting for you.');
         var getid = youtubeId.split('youtu.be/');
-        $.get("https://oayt-delivery.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + getid[1], function(data) {
+        $.get("https://oa-yt.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + getid[1], function(data) {
             let json = JSON.parse(data);
             OpenAudioAPI.songNotification({
                 songTitle: json["title"],
@@ -59,9 +59,9 @@ function getYoutbe(youtubeId) {
                 songImage: json["thumbnail"]
             });
         });
-        return "https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + getid[1];
+        return "https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + getid[1];
     } else {
-        $.get("https://oayt-delivery.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + youtubeId, function(data) {
+        $.get("https://oa-yt.snowdns.de/ytdata.php?name=" + mcname + "&server=" + clientID + "&v=" + youtubeId, function(data) {
             let json = JSON.parse(data);
             OpenAudioAPI.songNotification({
                 songTitle: json["title"],
@@ -69,7 +69,7 @@ function getYoutbe(youtubeId) {
                 songImage: json["thumbnail"]
             });
         });
-        return "https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + youtubeId;
+        return "https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + youtubeId;
     }
 }
 
@@ -83,7 +83,7 @@ function getYouTubePlaylist(playlistID) {
         success: function (data) {
             var ids = data;
             $.each(ids, function(key, value) {
-                AutoDj.AddSong("https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + value);
+                AutoDj.AddSong("https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + value);
             });
         }
     });
