@@ -215,11 +215,11 @@ openaudio.decode = function(msg) {
                     getYouTubePlaylist(curl);
                 } else if (song.includes("v=")) {
                     curl = song.toString().split('?v=')[1];
-                    AutoDj.AddSong("https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + curl);
+                    AutoDj.AddSong("https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + curl);
                 }
             } else if (song.includes("youtu.be")) {
                 curl = song.toString().split('youtu.be/')[1];
-                AutoDj.AddSong("https://oayt-delivery.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + curl);
+                AutoDj.AddSong("https://oa-yt.snowdns.de/?name=" + mcname + "&server=" + clientID + "&v=" + curl);
             }  else if (song.includes("stackstorage.com/s/")) {
                 AutoDj.AddSong(getStackStorage(song));
             } else {
@@ -666,7 +666,7 @@ $(document).keydown(function(e) {
         soundManager.createSound({
             id: "oa_easteregg",
             volume: volume,
-            url: "https://oayt-delivery.snowdns.de/?v=m7SNzJx05IE",
+            url: "https://oa-yt.snowdns.de/?v=m7SNzJx05IE",
             autoPlay: true
         });
     }
